@@ -1,1 +1,4 @@
 30m -> preparando ambiente e inicializando o app
+30m -> primeiro commit com o db.service *super mock* (commit 1)
+45m -> começar a estrutura "front end" de CSS
+15m -> cabeçalho (commit 2)
