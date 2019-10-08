@@ -1,4 +1,7 @@
 30m -> preparando ambiente e inicializando o app
-30m -> primeiro commit com o db.service *super mock* (commit 1)
+30m -> primeiro commit com o db.service *super mock*
 45m -> começar a estrutura "front end" de CSS
-15m -> cabeçalho (commit 2)
+15m -> cabeçalho
+60m -> ajustar o cabeçalho responsividade
+60m -> iniciar a tabela de usuários
+60m -> finalizar a tabela (depois de desistir do menu flutuante)

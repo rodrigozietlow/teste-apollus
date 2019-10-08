@@ -1,0 +1,54 @@
+table {
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+	border: none;
+	border-collapse: separate;
+	max-width: 120em;
+	width: 100%;
+	border-spacing: 0 0.75em;
+}
+
+tr {
+	width: 100%;
+}
+
+.t-header {
+	background-color: transparent;
+}
+
+
+.t-header > th {
+	text-align: left;
+	color: #999999;
+	font-weight: 400;
+	font-size: 0.75em;
+}
+
+tr:not(.t-header) > td:first-child {
+	padding: 1em;
+}
+
+tr > td {
+	background-color: #FFFFFF;
+	height: 2em;
+	padding: 0.75em;
+}
+
+tr > th {
+	padding: 0.25em 1em;
+}
+
+td > i {
+	color: #888888;
+	vertical-align: middle;
+}
+
+td > span {
+	vertical-align: middle;
+}
+
+.action-control {
+	cursor: pointer;
+	margin-left: 0.5em;
+}
