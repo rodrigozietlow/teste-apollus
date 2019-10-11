@@ -52,3 +52,7 @@ td > span {
 	cursor: pointer;
 	margin-left: 0.5em;
 }
+
+.alert {
+	max-width: 50%;
+}

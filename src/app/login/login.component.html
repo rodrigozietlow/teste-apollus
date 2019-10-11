@@ -9,7 +9,7 @@
 			<div class="form-section" [class.form-error]="email.invalid && submitted">
 				<label for="email">E-mail</label>
 				<input type="text" name="email" placeholder="Digite seu e-mail" formControlName="email">
-				<div class="alert" *ngIf="submitted && email.invalid">
+				<div class="error" *ngIf="submitted && email.invalid">
 					<div *ngIf="email.errors.required">
 						Você precisa preencher este campo
 					</div>
@@ -21,7 +21,7 @@
 			<div class="form-section" [class.form-error]="senha.invalid && submitted">
 				<label for="senha">Senha</label>
 				<input type="password" name="senha" placeholder="Digite sua senha" formControlName="senha">
-				<div class="alert" *ngIf="submitted && senha.invalid">
+				<div class="error" *ngIf="submitted && senha.invalid">
 					<div *ngIf="senha.errors.required">
 						Você precisa preencher este campo
 					</div>

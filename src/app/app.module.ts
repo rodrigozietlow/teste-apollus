@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { CadastrarComponent } from './users/cadastrar/cadastrar.component';
+import { FormComponent } from './users/form/form.component';
+import { EditarComponent } from './users/editar/editar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    CadastrarComponent,
+    FormComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
 		Usuários do sistema &nbsp;
 	<!-- </span> -->
 </h2>
-<button class="btn btn-primary btn-icon" type="button" name="button" *ngIf="elevacao">
+<button class="btn btn-primary btn-icon" type="button" name="button" *ngIf="elevacao" routerLink="/users/cadastrar">
 	<i class="material-icons">
 		person_add
 	</i>
@@ -12,69 +12,26 @@
 		Adicionar usuário
 	</span>
 </button>
-
-<table>
+<table *ngIf="!carregando">
 	<tr class="t-header">
 		<th>Nome</th>
 		<th>E-mail</th>
 		<th>Tipo</th>
 	</tr>
-	<tr>
+	<tr *ngFor="let user of users">
 		<td>
 			<i class="material-icons">
 				account_circle
 			</i>
 			<span>
 				&nbsp;
-				Rodrigo Zietlow
+				{{user.name}}
 			</span>
 		</td>
-		<td>rodrigo.zietlow@gmail.com</td>
-		<td>Administrador</td>
-		<td>
-			<i class="material-icons action-control">
-				edit
-			</i>
-			<i class="material-icons action-control">
-				delete
-			</i>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<i class="material-icons">
-				account_circle
-			</i>
-			<span>
-				&nbsp;
-				Rodrigo Zietlow
-			</span>
-		</td>
-		<td>rodrigo.zietlow@gmail.com</td>
-		<td>Administrador</td>
-		<td>
-			<i class="material-icons action-control">
-				edit
-			</i>
-			<i class="material-icons action-control">
-				delete
-			</i>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<i class="material-icons">
-				account_circle
-			</i>
-			<span>
-				&nbsp;
-				Rodrigo Zietlow
-			</span>
-		</td>
-		<td>rodrigo.zietlow@gmail.com</td>
-		<td>Administrador</td>
-		<td>
-			<i class="material-icons action-control">
+		<td>{{user.email}}</td>
+		<td>{{user.type == 'admin' ? 'Administrador' : 'Usuário'}}</td>
+		<td *ngIf="elevacao">
+			<i class="material-icons action-control" routerLink="/users/editar/{{user.id}}">
 				edit
 			</i>
 			<i class="material-icons action-control">
@@ -83,3 +40,6 @@
 		</td>
 	</tr>
 </table>
+<div class="alert alert-warning" *ngIf="carregando">
+	Carregando
+</div>

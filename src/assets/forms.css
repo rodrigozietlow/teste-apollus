@@ -59,7 +59,7 @@
 	font-size: 0.8em;
 }
 
-.form-error > .alert {
+.form-error > .error {
 	box-sizing: border-box;
 	font-size: 0.8em;
 	font-weight: bold;

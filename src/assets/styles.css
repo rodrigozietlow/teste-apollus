@@ -94,3 +94,20 @@ button > span {
 	color: #FFFFFF;
 	fill: #FFFFFF;
 }
+
+
+/* ========================== */
+.alert {
+	border: solid #03030330 1px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 0.5em;
+	margin-top: 0.5em;
+}
+
+.alert-warning {
+	background: #FFF9C4!important;
+	border-color: #FFF176!important;
+	color: #856404!important;
+	fill: #856404!important;
+}
