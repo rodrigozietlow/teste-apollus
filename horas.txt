@@ -6,3 +6,4 @@
 60m -> iniciar a tabela de usuários
 60m -> finalizar a tabela (depois de desistir do menu flutuante)
 45m -> estilo da página de login
+45m -> estilos de erros e validação da página de login

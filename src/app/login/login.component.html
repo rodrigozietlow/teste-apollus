@@ -5,16 +5,39 @@
 	<h1>Bem-vindo ao ambiente de teste!</h1>
 	<p>Para ter acesso ao sistema, faça login com suas credenciais</p>
 	<div class="form-container">
-		<form class="form">
-			<div class="form-section">
+		<form class="form" [formGroup]="loginForm" (submit)="onSubmit()">
+			<div class="form-section" [class.form-error]="email.invalid && submitted">
 				<label for="email">E-mail</label>
-				<input type="text" name="email" placeholder="Digite seu e-mail">
+				<input type="text" name="email" placeholder="Digite seu e-mail" formControlName="email">
+				<div class="alert" *ngIf="submitted && email.invalid">
+					<div *ngIf="email.errors.required">
+						Você precisa preencher este campo
+					</div>
+					<div *ngIf="email.errors.email">
+						Digite um e-mail válido
+					</div>
+				</div>
 			</div>
-			<div class="form-section">
+			<div class="form-section" [class.form-error]="senha.invalid && submitted">
 				<label for="senha">Senha</label>
-				<input type="password" name="senha" placeholder="Digite sua senha">
+				<input type="password" name="senha" placeholder="Digite sua senha" formControlName="senha">
+				<div class="alert" *ngIf="submitted && senha.invalid">
+					<div *ngIf="senha.errors.required">
+						Você precisa preencher este campo
+					</div>
+					<div *ngIf="senha.errors.email">
+						Digite um e-mail válido
+					</div>
+				</div>
 			</div>
-			<button class="btn btn-success" type="submit" name="button">Login</button>
+			<button class="btn btn-success btn-icon" type="submit" name="button">
+				<i class="material-icons">
+					exit_to_app
+				</i>
+				<span>
+					Login
+				</span>
+			</button>
 		</form>
 	</div>
 </div>

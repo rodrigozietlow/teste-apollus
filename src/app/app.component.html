@@ -2,7 +2,7 @@
 	<div class="header-logo" routerLink="/">
 		Teste Apollus
 	</div>
-	<div class="header-logout">
+	<div class="header-logout" *ngIf="isLogged">
 		<button class="btn btn-white btn-outline account" type="button" name="button">
 			<i class="material-icons">
 				account_circle
@@ -12,7 +12,7 @@
 			</span>
 		</button>
 		<!-- <button class="btn btn-white btn-outline" type="button" name="button"> -->
-		<button type="button" class="leave btn-noemph">
+		<button type="button" class="leave btn-noemph" (click)="logout()">
 			<i class="material-icons">
 				power_settings_new
 			</i>
