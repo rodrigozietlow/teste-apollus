@@ -8,3 +8,6 @@
 45m -> estilo da página de login
 45m -> estilos de erros e validação da página de login
 30m -> dashboard com informaçoes do db.service
+300m-> ajustes finais, perfil e crud de usuários
+----------------------------------------------------------------
+12 horas de trabalho (aproximadamente)
