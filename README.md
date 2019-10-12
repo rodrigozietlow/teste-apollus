@@ -36,4 +36,4 @@ Valor: `[{"id": 1, "name": "Administrador", "email": "administrador@administrado
 
 Agora é só fazer login com as informações de administrador:
 
-`administrador@administrado.cm` e senha `123` (ou qualquer informação passada na chave dbUser)
+`administrador@administrado.com` e senha `123` (ou qualquer informação passada na chave dbUser)
