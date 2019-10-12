@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './users/cadastrar/cadastrar.component';
 import { FormComponent } from './users/form/form.component';
 import { EditarComponent } from './users/editar/editar.component';
+import { PerfilComponent } from './users/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { EditarComponent } from './users/editar/editar.component';
     LoginComponent,
     CadastrarComponent,
     FormComponent,
-    EditarComponent
+    EditarComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
 	ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

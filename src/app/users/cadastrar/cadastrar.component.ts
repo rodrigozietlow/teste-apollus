@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { DbService } from '@app/_services/db.service';
 import { User } from '@app/usuario';
 
 @Component({
@@ -18,13 +20,18 @@ export class CadastrarComponent implements OnInit {
 		'type': 'user'
 	};
 
-	constructor() { }
+	constructor(
+		private db: DbService,
+		private router: Router,
+	) { }
 
 	ngOnInit() {
 	}
 
 	receberSubmit(user: User) {
-		console.log(user);
+		this.db.addUser(user).subscribe(
+			() => this.router.navigate(['dashboard'])
+		);
 	}
 
 }

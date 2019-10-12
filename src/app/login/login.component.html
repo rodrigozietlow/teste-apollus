@@ -27,14 +27,21 @@
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-success btn-icon" type="submit" name="button">
-				<i class="material-icons">
-					exit_to_app
-				</i>
-				<span>
-					Login
-				</span>
-			</button>
+			<div class="form-section">
+				<button class="btn btn-success btn-icon" type="submit" name="button">
+					<i class="material-icons">
+						exit_to_app
+					</i>
+					<span>
+						Login
+					</span>
+				</button>
+			</div>
+			<div class="form-section form-error" *ngIf="erro">
+				<div class="error">
+					{{erro}}
+				</div>
+			</div>
 		</form>
 	</div>
 </div>

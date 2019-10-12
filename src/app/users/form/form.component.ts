@@ -38,12 +38,20 @@ export class FormComponent implements OnInit {
 
 	ngOnInit() {
 		// colocamos isto no onInit pois é nesse ciclo que os @Inputs são passados
-		this.userForm = new FormGroup({
-			'nome': new FormControl(this.user.name, [Validators.required]),
-			'email': new FormControl(this.user.email, [Validators.required, Validators.email]),
-			'senha': new FormControl(this.user.pwd, Validators.required),
-			'tipo': new FormControl(this.user.type, Validators.required),
-		});
+		if (this.user.id == undefined) {
+			this.userForm = new FormGroup({
+				'nome': new FormControl(this.user.name, [Validators.required]),
+				'email': new FormControl(this.user.email, [Validators.required, Validators.email]),
+				'senha': new FormControl(this.user.pwd, Validators.required),
+				'tipo': new FormControl(this.user.type, Validators.required),
+			});
+		} else { // em update não tem senha
+			this.userForm = new FormGroup({
+				'nome': new FormControl(this.user.name, [Validators.required]),
+				'email': new FormControl(this.user.email, [Validators.required, Validators.email]),
+				'tipo': new FormControl(this.user.type, Validators.required),
+			});
+		}
 	}
 
 	onSubmit() {
@@ -55,9 +63,12 @@ export class FormComponent implements OnInit {
 			"id": this.user.id,
 			"name": this.nome.value,
 			"email": this.email.value,
-			"pwd": this.senha.value,
 			"type": this.tipo.value,
 		};
+
+		if (this.user.id == undefined) {
+			newUser.pwd = this.senha.value;
+		}
 		this.submeter.emit(newUser);
 	}
 }

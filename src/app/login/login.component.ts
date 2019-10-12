@@ -13,6 +13,7 @@ import { TokenCreds } from '@app/usuario';
 export class LoginComponent implements OnInit {
 
 	public submitted = false;
+	public erro = "";
 
 	loginForm = new FormGroup({
 		'email': new FormControl('', [Validators.required, Validators.email]),
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
 
 	}
 
-	onSubmit() { 
+	onSubmit() {
 		if (this.loginForm.status != 'VALID') {
 			this.submitted = true;
 			return;
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit {
 			this.loginForm.get('senha').value,
 		).subscribe(
 			() => this.router.navigate(['/dashboard']),
-			error => console.error(error)
+			() => this.erro = 'Não foi possível fazer login. Você digitou as informações corretas?'
 		);
 	}
 }

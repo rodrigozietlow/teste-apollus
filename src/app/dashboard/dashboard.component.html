@@ -3,6 +3,10 @@
 		Usuários do sistema &nbsp;
 	<!-- </span> -->
 </h2>
+<div class="form-section">
+	<label for="pesquisa">Pesquisa</label>
+	<input type="text" name="pesquisa" placeholder="Pesquise aqui" [(ngModel)]="pesquisa" (ngModelChange)="pesquisar($event)">
+</div>
 <button class="btn btn-primary btn-icon" type="button" name="button" *ngIf="elevacao" routerLink="/users/cadastrar">
 	<i class="material-icons">
 		person_add
@@ -12,7 +16,7 @@
 		Adicionar usuário
 	</span>
 </button>
-<table *ngIf="!carregando">
+<table *ngIf="!carregando && users.length">
 	<tr class="t-header">
 		<th>Nome</th>
 		<th>E-mail</th>
@@ -34,12 +38,15 @@
 			<i class="material-icons action-control" routerLink="/users/editar/{{user.id}}">
 				edit
 			</i>
-			<i class="material-icons action-control">
+			<i class="material-icons action-control" (click)="excluir(user)">
 				delete
 			</i>
 		</td>
 	</tr>
 </table>
+<div class="alert" *ngIf="!carregando && ! users.length">
+	Nenhum usuário cadastrado
+</div>
 <div class="alert alert-warning" *ngIf="carregando">
 	Carregando
 </div>

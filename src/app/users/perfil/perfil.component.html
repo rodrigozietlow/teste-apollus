@@ -1,0 +1,52 @@
+<ng-container *ngIf="user">
+	<div class="profile-container">
+		<div class="profile-pic">
+			<i class="material-icons">
+				account_circle
+			</i>
+		</div>
+		<div class="profile-info">
+			<div class="profile-name">
+				{{user.name}}
+			</div>
+			<div class="profile-subs">
+				{{user.email}}
+			</div>
+			<div class="profile-subs">
+				{{user.type=='admin' ? 'Administrador' : 'Comum'}}
+			</div>
+		</div>
+	</div>
+	<h2>Alterar senha</h2>
+	<form class="form" [formGroup]="perfilForm" (submit)="onSubmit()">
+		<div class="form-section" [class.form-error]="(atual.invalid || atualErrada) && submitted">
+			<label for="atual">Senha atual</label>
+			<input type="password" name="atual" placeholder="Digite sua senha atual" formControlName="atual">
+			<div class="error" *ngIf="submitted && (atual.invalid || atualErrada)">
+				<div *ngIf="atual.errors?.required">
+					Você precisa preencher este campo
+				</div>
+				<div *ngIf="atualErrada">
+					A senha está incorreta
+				</div>
+			</div>
+		</div>
+		<div class="form-section" [class.form-error]="senha.invalid && submitted">
+			<label for="senha">Senha</label>
+			<input type="password" name="senha" placeholder="Digite a senha do usuário" formControlName="senha">
+			<div class="error" *ngIf="submitted && senha.invalid">
+				<div *ngIf="senha.errors.required">
+					Você precisa preencher este campo
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-success btn-icon" type="submit" name="button">
+			<i class="material-icons">
+				done
+			</i>
+			<span>
+				Alterar senha
+			</span>
+		</button>
+	</form>
+</ng-container>

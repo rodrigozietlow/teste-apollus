@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { DbService } from '@app/_services/db.service';
 import { User } from '@app/usuario';
@@ -10,15 +11,17 @@ import { User } from '@app/usuario';
 })
 export class EditarComponent implements OnInit {
 
-	public buttonName = 'Cadastrar usuário';
+	public buttonName = 'Editar usuário';
 	public user: User;
 
 	constructor(
 		private db: DbService,
+		private route: ActivatedRoute,
+		private router: Router,
 	) { }
 
 	ngOnInit() {
-		let id = 1;
+		let id = +this.route.snapshot.paramMap.get('id');
 		this.db.getUser(id).subscribe(
 			user => this.user = user
 		);
@@ -26,6 +29,8 @@ export class EditarComponent implements OnInit {
 
 
 	receberSubmit(user: User) {
-		console.log(user);
+		this.db.editUser(user).subscribe(
+			() => this.router.navigate(['dashboard'])
+		);
 	}
 }

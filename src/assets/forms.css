@@ -31,7 +31,7 @@
 	font-size: 1em;
 	border: none;
 	border-bottom: solid #CCCCCC 1px;
-	background-color: #FFFFFF;
+	background-color: transparent;
 	padding: 0.5em 0.25em;
 	box-sizing: border-box;
 }

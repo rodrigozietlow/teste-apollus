@@ -20,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="form-section" [class.form-error]="senha.invalid && submitted">
+	<div class="form-section" [class.form-error]="senha.invalid && submitted" *ngIf="!user.id">
 		<label for="senha">Senha</label>
 		<input type="password" name="senha" placeholder="Digite a senha do usuário" formControlName="senha">
 		<div class="error" *ngIf="submitted && senha.invalid">
@@ -35,8 +35,6 @@
 			<label for="{{tipo.value}}">{{tipo.nome}}</label>
 		</div>
 	</div>
-	{{user | json}}
-	{{userForm.value | json}}
 	<button class="btn btn-success btn-icon" type="submit" name="button">
 		<i class="material-icons">
 			done
