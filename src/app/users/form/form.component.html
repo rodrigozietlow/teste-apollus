@@ -1,1 +1,48 @@
-<p>form works!</p>
+<form class="form" [formGroup]="userForm" (submit)="onSubmit()">
+	<div class="form-section" [class.form-error]="nome.invalid && submitted">
+		<label for="nome">Nome</label>
+		<input type="text" name="nome" placeholder="Digite o nome do usuário" formControlName="nome">
+		<div class="error" *ngIf="submitted && nome.invalid">
+			<div *ngIf="nome.errors.required">
+				Você precisa preencher este campo
+			</div>
+		</div>
+	</div>
+	<div class="form-section" [class.form-error]="email.invalid && submitted">
+		<label for="email">E-mail</label>
+		<input type="text" name="email" placeholder="Digite o e-mail do usuário" formControlName="email">
+		<div class="error" *ngIf="submitted && email.invalid">
+			<div *ngIf="email.errors.required">
+				Você precisa preencher este campo
+			</div>
+			<div *ngIf="email.errors.email">
+				Digite um e-mail válido
+			</div>
+		</div>
+	</div>
+	<div class="form-section" [class.form-error]="senha.invalid && submitted">
+		<label for="senha">Senha</label>
+		<input type="password" name="senha" placeholder="Digite a senha do usuário" formControlName="senha">
+		<div class="error" *ngIf="submitted && senha.invalid">
+			<div *ngIf="senha.errors.required">
+				Você precisa preencher este campo
+			</div>
+		</div>
+	</div>
+	<div class="form-section">
+		<div class="radio" *ngFor="let tipo of opcoesTipo">
+			<input id="{{tipo.value}}" type="radio" name="tipo" value="{{tipo.value}}" formControlName="tipo">
+			<label for="{{tipo.value}}">{{tipo.nome}}</label>
+		</div>
+	</div>
+	{{user | json}}
+	{{userForm.value | json}}
+	<button class="btn btn-success btn-icon" type="submit" name="button">
+		<i class="material-icons">
+			done
+		</i>
+		<span>
+			{{buttonName}}
+		</span>
+	</button>
+</form>

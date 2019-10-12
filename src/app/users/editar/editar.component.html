@@ -1,2 +1,2 @@
 <h1>Editar usuário</h1>
-<app-user-form></app-user-form>
+<app-user-form [user]="user" [buttonName]="buttonName" (submeter)="receberSubmit($event)" *ngIf="user"></app-user-form>

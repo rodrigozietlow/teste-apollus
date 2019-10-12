@@ -1,2 +1,2 @@
 <h1>Cadastrar usuário</h1>
-<app-user-form></app-user-form>
+<app-user-form [user]="user" [buttonName]="buttonName" (submeter)="receberSubmit($event)"></app-user-form>

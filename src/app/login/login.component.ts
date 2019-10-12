@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
 	}
 
-	onSubmit() {
+	onSubmit() { 
 		if (this.loginForm.status != 'VALID') {
 			this.submitted = true;
 			return;
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 			this.loginForm.get('email').value,
 			this.loginForm.get('senha').value,
 		).subscribe(
-			token => this.router.navigate(['/dashboard']),
+			() => this.router.navigate(['/dashboard']),
 			error => console.error(error)
 		);
 	}
