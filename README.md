@@ -1,27 +1,39 @@
 # Apollus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+Projeto feito em Angular
 
-## Development server
+## Instalação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Antes de tudo, clone este repo e instale os pacotes da npm pra rodá-lo
 
-## Code scaffolding
+`cd path/to/the/folder`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npm install`
 
-## Build
+## Como rodar esta aplicação?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Primeiro, você precisa abrir o servidor de testes do angular para rodar este App.
 
-## Running unit tests
+`ng serve`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## O que é necessário configurar antes do login
 
-## Running end-to-end tests
+Você precisa configurar pelo menos um usuário administrador antes de fazer o
+primeiro login (afinal, sem usuário, sem login).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Abra no navegador o seguinte link:
 
-## Further help
+`localhost:4200`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Abra as opções de desenvolvedor `Ctrl + Shft + J` e vá na aba *Application*.
+
+Lá, crie uma nova entrada com o seguinte par chave-valor:
+
+Chave: `dbUser`
+
+Valor: `[{"id": 1, "name": "Administrador", "email": "administrador@administrador.com", "type": "admin", "pwd": "123"}]`
+
+Agora é só fazer login com as informações de administrador:
+
+`administrador@administrado.cm` e senha `123` (ou qualquer informação passada na chave dbUser)
